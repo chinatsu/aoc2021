@@ -1,4 +1,4 @@
-f=lambda l:print(sum(int(a<b)for a,b in zip(l,l[1:])))
+f=lambda l:print(sum(a<b for a,b in zip(l,l[1:])))
 p=list(map(int,open("in")))
 s=list(map(sum,zip(p,p[1:],p[2:])))
 f(p)
