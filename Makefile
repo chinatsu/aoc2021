@@ -1,2 +1,5 @@
 %.py:
-	@cd $*; python $*.py
+	cd $*; python prog.py
+
+golf-%:
+	wc -c < $*/prog.py
