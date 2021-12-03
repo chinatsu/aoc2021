@@ -3,5 +3,6 @@
 idk
 
 ```bash
-make 01.py
+make {01,02,03}.py
+make golf-{01,02,03}
 ```
