@@ -1,14 +1,7 @@
-i=open(0).read().split("\n")
-j=k=set(i)
-a=""
-O="1"
-C="0"
-e=lambda n,s:[d[n]for d in s].count(O)/len(s)
-f=lambda n,s:O if e(n,s)>0.5 else C
-g=lambda v:"".join([O if n==C else C for n in v])
-def h(n,s,x,z):t=x if e(n,s)==0.5 else z;return[x for x in s if x[n]==t]
-for n in range(len(i[0])):
- a+=f(n,i)
- if len(j)>1:j=h(n,j,O,f(n,j))
- if len(k)>1:k=h(n,k,C,g(f(n,k)))
-print(int(a,2)*int(g(a),2),int(j[0],2)*int(k[0],2))
+d=o=c=sorted([int(x,2)for x in open(0)])
+f=lambda i,l:sum((x>>i)&1 for x in l)
+e=lambda i,l,z:[x for x in l if(x>>i)&1==z]or l
+g=0
+for i in range(b:=d[-1].bit_length()):k=f(i,d)>len(d)/2;g|=k<<i
+for i in range(b-1,-1,-1):u=f(i,o)>=len(o)/2;o=e(i,o,u);d=f(i,c)<len(c)/2;c=e(i,c,d)
+print(g*(2**b-1^g),o[0]*c[0])
