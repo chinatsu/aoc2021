@@ -1,3 +1,2 @@
 p=list(map(int,open(0)))
-f=lambda i:sum(a<b for a,b in zip(p,p[i:]))
-print(f(1),f(3))
+print(*sum(a<b for a,b in zip(p,p[i:])for i in(1,3)))
