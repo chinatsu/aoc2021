@@ -1,6 +1,5 @@
 import re;a=__import__("collections").defaultdict(int);b=a.copy()
-for x,y,v,w in[map(int,re.findall('\d+',x))for x in open(0)]:
- c,d=(v-x>0)-(v-x<0),(w-y>0)-(w-y<0)
- for p in range(-~max(abs(v-x),abs(w-y))):h=(x+c*p,y+d*p);b[h]+=1;a[h]+=1^c&d
+for x,y,v,w in(map(int,re.findall('\d+',x))for x in open(0)):
+ for p in range(-~max(abs(v-x),abs(w-y))):c,d=(v-x>0)-(v-x<0),(w-y>0)-(w-y<0);h=(x+c*p,y+d*p);b[h]+=1;a[h]+=1^c&d
 f=lambda x:sum(v>1 for v in x.values())
 print(f(a),f(b))
